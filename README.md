@@ -34,10 +34,10 @@ Training uses 2025 only; no label of a predicted month is used as a feature.
 
 ## Getting the code
 
-The source code is published at <https://github.com/Indra-ATM/hospitable-nightlight>:
+The source code is published at <https://github.com/luciaabp/hospitable-nightlight-prc-challenge-2026.git>:
 
 ```bash
-git clone https://github.com/Indra-ATM/hospitable-nightlight.git
+git clone https://github.com/luciaabp/hospitable-nightlight-prc-challenge-2026.git
 cd hospitable-nightlight
 ```
 
