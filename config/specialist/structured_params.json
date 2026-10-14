@@ -1,0 +1,13 @@
+{
+  "loss_function": "RMSE",
+  "eval_metric": "RMSE",
+  "iterations": 2700,
+  "bootstrap_type": "Bayesian",
+  "border_count": 254,
+  "learning_rate": 0.07108700938420189,
+  "depth": 10,
+  "l2_leaf_reg": 8.508449673906318,
+  "random_strength": 12.92599985300091,
+  "bagging_temperature": 0.9488188928055175,
+  "max_ctr_complexity": 2
+}

@@ -1,0 +1,81 @@
+{
+  "recipe": "v87",
+  "stage": "assembly_from_cached_predictions",
+  "baseline": "v86",
+  "baseline_sha256": "8324c6bcd6131681a106396e485f69d73ae2e9e73aee4202810e881690bc7940",
+  "expected_sha256": "cd501a95bfadc57e942f65229ab16377969614265436b4b2ff6ac6902cd2e351",
+  "baseline_primary_seeds": 32,
+  "ensemble_weight": 0.978,
+  "corrector_weight": 0.37,
+  "lightgbm_weight": 0.5,
+  "quality_seed": 11,
+  "quality_rounds": 2500,
+  "protected_airport": "LIRF",
+  "lobt_window_seconds": 3606,
+  "chain": {
+    "_comment": "Parameters of the full chain read by reproduce.py. null = unconfirmed: the stage that uses it refuses to run. Every value below was confirmed against the original experiment files on 2026-10-09.",
+    "specialist": {
+      "seeds": [
+        1,
+        42
+      ],
+      "weight": 0.182,
+      "weight_nine_adsb": 0.022,
+      "weight_lirf": 0.182,
+      "_source": "seeds: specialist.py; 0.182: components/blend/v82.py V62_W; 0.022: v86.py checks row by row that the base is 0.978 * blend + 0.022 * v62 on the own-ADS-B rows of the nine airports, and v86 was rebuilt from v82 with an identical hash"
+    },
+    "base_model": {
+      "submit_version": 37,
+      "primary_seeds": 32,
+      "d2_max_gap_seconds": 1200,
+      "g4_max_gap_seconds": 1200,
+      "teams": {
+        "D2sub": "replica",
+        "FG4sub": "relaxedD2"
+      },
+      "_source": "team names: the historical output file names (D2sub: replica_v37, FG4sub: relaxedD2_v37). 1200 s confirmed: it adds exactly the 218,846 relaxed events of the historical D2sub. G4 events: components/base_model/variants.fg4_events(1200) equals the historical FG4sub events (1,481,648 rows) when the 2026-01-29 adsb.lol day is complete"
+    },
+    "context_v70": {
+      "run_name": "pipeline_20261003_anchor",
+      "config": "config/context.json",
+      "blend_weight": 0.3,
+      "_source": "components/blend/blend.py OURS_WEIGHT; components/blend/v82.py V70"
+    },
+    "lirf_rotation": {
+      "months": [
+        "2026-01",
+        "2026-02",
+        "2026-06",
+        "2026-07"
+      ],
+      "oof_variant": "base_reference",
+      "oof_base": "20260930-130008-e76_base",
+      "_source": "components/blend/v82.py ROTATION_MONTHS. The historical OOF (cache key 132d675550ad19db) came from the upstream base-model engine with the base ADS-B events (sha256 f4e18744...), not from D2sub (88374efd...): base_reference is that same engine with the base events, trained by stage base_reference_v37"
+    },
+    "m2": {
+      "weight": 0.3,
+      "seeds": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "lgb_rounds": 2500,
+      "cb_iterations": 3000,
+      "_source": "bag of 4 seeds: m2.py writes pred_ranking.parquet for seed 11 and pred_ranking_s<N>.parquet otherwise; the original folder holds exactly seeds 11, 12, 13 and 14"
+    },
+    "m2r": {
+      "tag": "c",
+      "seed": 11,
+      "weight_m2": 0.0,
+      "weight_m2r": 0.37,
+      "bag": false,
+      "_source": "v87_rc_037_s32 = components/blend/v86.py --seeds 32 --tag c --wm 0 --wr 0.37 without --bag; rebuilt on 2026-10-08 with an identical hash"
+    },
+    "ventana": true,
+    "candidate_names": {
+      "v82": "v82_m2_03_s32_m2bag_ventana",
+      "v86": "v87_rc_037_s32"
+    }
+  }
+}

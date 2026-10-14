@@ -1,0 +1,14 @@
+# Text files are stored and checked out with LF on every platform, so the hashes in
+# config/source_manifest.json do not depend on the client's core.autocrlf setting.
+* text=auto eol=lf
+
+# Binary artifacts: never converted or diffed as text.
+*.parquet binary
+*.xlsx binary
+*.joblib binary
+*.cbm binary
+*.pkl binary
+*.npy binary
+*.png binary
+*.gz binary
+*.zip binary

@@ -1,0 +1,139 @@
+{
+  "members": [
+    {
+      "id": "20261001-185827-e122",
+      "config": {
+        "model": "stack_cf",
+        "base": "20260930-130008-e76_base",
+        "base_config": {
+          "model": "two_stage_nm",
+          "cls_rounds": 400,
+          "reg_rounds": 400,
+          "seed": 0,
+          "nm_split_ms": false,
+          "nm_min_ms": 21600.0,
+          "clip_lobt": true,
+          "target_cap": 7200.0,
+          "arrival_context": true,
+          "weather_rotation": true,
+          "airport_regressors": true
+        },
+        "adsb": true,
+        "rounds": 500,
+        "seed": 0,
+        "corrector": "ensemble",
+        "external_data": true,
+        "weather_rotation": true,
+        "plan_distance": true,
+        "exclude_rule_rows": true,
+        "retention": true,
+        "airport_geometry": true,
+        "cell_reference": true
+      }
+    },
+    {
+      "id": "20260930-140011-e76_m1",
+      "config": {
+        "model": "stack_cf",
+        "base": "20260930-130008-e76_base",
+        "base_config": {
+          "model": "two_stage_nm",
+          "cls_rounds": 400,
+          "reg_rounds": 400,
+          "seed": 0,
+          "nm_split_ms": false,
+          "nm_min_ms": 21600.0,
+          "clip_lobt": true,
+          "target_cap": 7200.0,
+          "arrival_context": true,
+          "weather_rotation": true,
+          "airport_regressors": true
+        },
+        "adsb": true,
+        "rounds": 500,
+        "seed": 0,
+        "corrector": "ensemble",
+        "external_data": true,
+        "weather_rotation": true,
+        "queue": true,
+        "plan_distance": true,
+        "surface": true,
+        "airport_geometry": true,
+        "cell_reference": true,
+        "corrector_params": {
+          "num_leaves": 127
+        }
+      }
+    },
+    {
+      "id": "20261002-015703-e140",
+      "config": {
+        "model": "stack_cf",
+        "base": "20260930-130008-e76_base",
+        "base_config": {
+          "model": "two_stage_nm",
+          "cls_rounds": 400,
+          "reg_rounds": 400,
+          "seed": 0,
+          "nm_split_ms": false,
+          "nm_min_ms": 21600.0,
+          "clip_lobt": true,
+          "target_cap": 7200.0,
+          "arrival_context": true,
+          "weather_rotation": true,
+          "airport_regressors": true
+        },
+        "adsb": true,
+        "rounds": 500,
+        "seed": 0,
+        "corrector": "ensemble",
+        "external_data": true,
+        "weather_rotation": true,
+        "plan_distance": true,
+        "exclude_rule_rows": true,
+        "runway": true,
+        "retention": true,
+        "airport_geometry": true,
+        "cell_reference": true
+      }
+    },
+    {
+      "id": "20261001-160427-e113_m1",
+      "config": {
+        "model": "stack_cf",
+        "base": "20261001-150429-e113_base",
+        "base_config": {
+          "model": "two_stage_nm",
+          "cls_rounds": 400,
+          "reg_rounds": 400,
+          "seed": 0,
+          "nm_split_ms": false,
+          "nm_min_ms": 21600.0,
+          "clip_lobt": true,
+          "target_cap": 7200.0,
+          "arrival_context": true,
+          "weather_rotation": true,
+          "airport_regressors": true,
+          "classifier_weight": "quad"
+        },
+        "adsb": true,
+        "rounds": 500,
+        "seed": 0,
+        "corrector": "ensemble",
+        "external_data": true,
+        "weather_rotation": true,
+        "queue": true,
+        "plan_distance": true,
+        "surface": true,
+        "airport_geometry": true,
+        "cell_reference": true,
+        "corrector_params": {
+          "num_leaves": 127
+        }
+      }
+    }
+  ],
+  "post_rules": [
+    "roma"
+  ]
+}

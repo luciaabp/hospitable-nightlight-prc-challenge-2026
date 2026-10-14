@@ -1,0 +1,19 @@
+{
+  "rows": 344841,
+  "changed_rows": 211885,
+  "protected_rows": 132875,
+  "window_violations": 0,
+  "rms_change": 4.227445301022231,
+  "top100_change_energy_share": 0.05087796135230304,
+  "recipe": "v87",
+  "sha256": "cd501a95bfadc57e942f65229ab16377969614265436b4b2ff6ac6902cd2e351",
+  "inputs": {
+    "template": "0d383408ed5ac27bfcfd12d6b961cee77c8a6364b10dad9fe3ec81115c79652b",
+    "baseline": "8324c6bcd6131681a106396e485f69d73ae2e9e73aee4202810e881690bc7940",
+    "original": "6cc4c0139d70bf8e31bcf728b9a314254437fe1eb725a0a5b3ba6bc9231a1586",
+    "quality": "01e8ee8beb7ce6bbde57da551846b523fa4828b726304c6aef31d16e36bfefca",
+    "ranking": "9db75e3a56fa09b87aab72e191a53da3fe763d9887ad2b23aea9cde6a6325f86",
+    "events": "eb74d6dd7eb56e6bc8c0c7935316ce43d1c8a0ce9a45382232b763ecff70c5cc"
+  },
+  "upload": false
+}

@@ -1,0 +1,123 @@
+{
+  "run_name": "pipeline_20261003_anchor",
+  "interim_dir": "local_data/interim_nm",
+  "ranking_name": "ranking.parquet",
+  "training_pattern": "training_*.parquet",
+  "template": "data/projects/prc_data_challenge/raw/submitting.parquet",
+  "output_root": "outputs/pipeline",
+  "imputed_tolerance_sec": 60.0,
+  "grouped_seeds": [
+    42,
+    1,
+    7,
+    2026
+  ],
+  "grouped_depth": 10,
+  "grouped_iterations": {
+    "group_1": 2512,
+    "group_2": 2856,
+    "group_3": 2114
+  },
+  "grouped_classifier_iterations": 1744,
+  "grouped_threads": 16,
+  "grouped_label_max_sec": 21600.0,
+  "grouped_lgb_weight": 0.35,
+  "grouped_airport_lgb_weight": 0.5,
+  "grouped_airport_cb_weight": 0.5,
+  "grouped_lgb_adsb": true,
+  "grouped_anchor_cb_weight": 0.5,
+  "grouped_anchor_cb_months": [
+    "2026-06",
+    "2026-07"
+  ],
+  "grouped_anchor_lgb_weight": 0.5,
+  "grouped_anchor_lgb_months": [
+    "2026-01",
+    "2026-02"
+  ],
+  "grouped_lgb_rounds": {
+    "group_1": 520,
+    "group_2": 466,
+    "group_3": 581
+  },
+  "grouped_lgb_guard_sec": 3600.0,
+  "grouped_taxi_margin_sec": 1800.0,
+  "lirf_seeds": [
+    42,
+    1
+  ],
+  "lirf_depth": 6,
+  "lirf_iterations": 600,
+  "lirf_threads": 8,
+  "lirf_first_oof_index": 2,
+  "gate_penalties": [
+    0.001,
+    0.01,
+    0.1,
+    1.0
+  ],
+  "valid_months": [
+    "2025-07",
+    "2025-09",
+    "2025-11",
+    "2025-12"
+  ],
+  "lirf_gate_month_penalty": null,
+  "lirf_gate_penalty_months": [
+    "2026-06",
+    "2026-07"
+  ],
+  "lirf_dayshift": "banded",
+  "lirf_quality": "causal",
+  "departures_taxiing": "causal",
+  "lirf_mixture_months": [
+    "2026-06",
+    "2026-07"
+  ],
+  "lirf_mixture_delay": [
+    3600.0,
+    10800.0
+  ],
+  "fnhist_months": [
+    "2026-01",
+    "2026-02"
+  ],
+  "lirf_fnhist_iterations": 1200,
+  "lirf_destination": true,
+  "lirf_inbound_features": "local_data/inbound_features/features.parquet",
+  "adsb_features": "local_data/adsb_features_20260928/features_takeoff.parquet",
+  "adsb_airports": [
+    "EDDF",
+    "EDDM",
+    "EHAM",
+    "LEBL",
+    "LSZH"
+  ],
+  "context_features": "local_data/context_features/features.parquet",
+  "grouped_context_lgb_rounds": {
+    "group_1": 508,
+    "group_2": 746,
+    "group_3": 795
+  },
+  "wx_features": "local_data/wx_features/features.parquet",
+  "wx_groups": [
+    "group_1"
+  ],
+  "timeline_components": [
+    "grouped",
+    "lirf"
+  ],
+  "grouped_inbound_features": "local_data/inbound_features_nine/features.parquet",
+  "state_features": "local_data/state_features/features.parquet",
+  "state_adsb": true,
+  "forward_features": "local_data/forward_features/features.parquet",
+  "forward_groups": [
+    "load",
+    "sequence",
+    "nm",
+    "plan",
+    "delay"
+  ],
+  "workers": 6,
+  "validate": true
+}
